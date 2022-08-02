@@ -1,4 +1,4 @@
-KERNEL_DIR=private/gs-google
+KERNEL_DIR=gs101/private/gs-google
 
 . ${ROOT_DIR}/${KERNEL_DIR}/build.config.gs101
 VENDOR_RAMDISK_BINARY=${ROOT_DIR}/private/devices/google/bluejay/vendor_ramdisk-bluejay.img
@@ -36,7 +36,7 @@ $DEVICE_KERNEL_FILES
 "
 fi
 
-MODULES_LIST=private/devices/google/bluejay/vendor_boot_modules.bluejay
+MODULES_LIST=gs101/private/devices/google/bluejay/vendor_boot_modules.bluejay
 
 VENDOR_RAMDISK_CMDS="modify_vendor_ramdisk"
 function modify_vendor_ramdisk() {
@@ -44,4 +44,4 @@ function modify_vendor_ramdisk() {
   ln -f init.recovery.gs101.rc init.recovery.bluejay.rc
 }
 
-EXT_MODULES_MAKEFILE=private/devices/google/bluejay/Makefile.ext_modules.bluejay
+EXT_MODULES_MAKEFILE=gs101/private/devices/google/bluejay/Makefile.ext_modules.bluejay
