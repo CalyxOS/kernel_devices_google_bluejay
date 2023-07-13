@@ -1,4 +1,4 @@
-KERNEL_DIR=gs101/private/gs-google
+KERNEL_DIR=gs201/private/gs-google
 
 . ${ROOT_DIR}/${KERNEL_DIR}/build.config.gs101
 VENDOR_RAMDISK_BINARY=${ROOT_DIR}/private/devices/google/bluejay/vendor_ramdisk-bluejay.img
@@ -40,7 +40,7 @@ fi
 POST_KERNEL_BUILD_CMDS="concat_vendor_boot_modules"
 function concat_vendor_boot_modules() {
   cat ${KERNEL_DIR}/vendor_boot_modules.gs101 \
-    gs101/private/devices/google/bluejay/vendor_boot_modules.bluejay > \
+    gs201/private/devices/google/bluejay/vendor_boot_modules.bluejay > \
     ${OUT_DIR}/vendor_boot_modules.concat
   MODULES_LIST=${OUT_DIR}/vendor_boot_modules.concat
 }
@@ -51,4 +51,4 @@ function modify_vendor_ramdisk() {
   ln -f init.recovery.gs101.rc init.recovery.bluejay.rc
 }
 
-EXT_MODULES_MAKEFILE=gs101/private/devices/google/bluejay/Makefile.ext_modules.bluejay
+EXT_MODULES_MAKEFILE=gs201/private/devices/google/bluejay/Makefile.ext_modules.bluejay
